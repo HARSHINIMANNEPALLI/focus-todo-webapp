@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>To-Do List</h2>
+
+        <div class="timer-section">
+            <p class="timer-label">Focus Timer</p>
+            <div class="timer-display" id="timerDisplay">00:00</div>
+            <div class="timer-controls">
+                <button type="button" id="startTimerBtn">Start</button>
+                <button type="button" id="pauseTimerBtn">Pause</button>
+                <button type="button" id="resetTimerBtn">Reset</button>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Enter task">
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="spotify-section">
+            <button type="button" id="musicToggleBtn" class="music-toggle" aria-expanded="false">
+                Open Music
+            </button>
+            <div id="musicPanel" class="music-panel hidden">
+                <p class="spotify-label">Music</p>
+                <div class="music-controls">
+                    <label class="music-picker-label" for="musicType">Choose music</label>
+                    <select id="musicType" class="music-picker">
+                        <option value="pleasant">Pleasant Piano</option>
+                        <option value="pop">Pop Hits</option>
+                        <option value="lofi">Lo-Fi Beats</option>
+                        <option value="chill">Chill Hits</option>
+                    </select>
+                </div>
+                <iframe
+                    id="spotifyPlayer"
+                    class="spotify-player"
+                    title="Spotify Embed: Peaceful Piano"
+                    src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4sWSpwq3LiO?theme=0"
+                    loading="lazy"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
